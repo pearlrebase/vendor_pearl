@@ -8,6 +8,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/pearl/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/pearl/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/pearl/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     dalvik.vm.debug.alloc=0 \
@@ -41,7 +47,7 @@ PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/potato/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/pearl/overlay/common
 
 # Packages
 include vendor/pearl/config/packages.mk
