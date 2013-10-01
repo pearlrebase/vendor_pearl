@@ -16,6 +16,7 @@
 # -----------------------------------------------------------------
 # Pearl OTA update package
 
+PEARL_VERSION := $(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +%Y%m%d).$(USER)
 PEARL_TARGET_PACKAGE := $(PRODUCT_OUT)/pearl-$(PEARL_VERSION).zip
 
 .PHONY: bacon
