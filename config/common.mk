@@ -14,6 +14,13 @@ PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/pearl/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/pearl/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/pearl/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/pearl/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     dalvik.vm.debug.alloc=0 \
