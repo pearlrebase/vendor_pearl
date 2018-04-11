@@ -90,7 +90,8 @@ PRODUCT_PACKAGES += \
     SystemUIDarkTheme \
     ContactsThemeDark \
     DialerThemeDark \
-    FilesThemeDark
+    FilesThemeDark \
+    UpdaterDark
 
 # Themes Black
 PRODUCT_PACKAGES += \
@@ -99,7 +100,8 @@ PRODUCT_PACKAGES += \
     SystemUIBlackTheme \
     ContactsThemeBlack \
     DialerThemeBlack \
-    FilesThemeBlack
+    FilesThemeBlack \
+    UpdaterBlack
 
 # Accents
 PRODUCT_PACKAGES += \
