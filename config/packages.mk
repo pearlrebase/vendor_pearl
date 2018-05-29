@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
     StockTheme \
     PixelBaseTheme \
     StockBaseTheme \
-    StockBaseFixedTheme
+    StockFixedBaseTheme
 
 # Dark/BlackUI Packages
 PRODUCT_PACKAGES += \
