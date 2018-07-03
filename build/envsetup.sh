@@ -431,7 +431,6 @@ function mergeaosptag()
   done
 
   whitelist=(
-    build_make
     device_potato_sepolicy
     device_qcom_sepolicy
     external_json-c
