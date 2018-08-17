@@ -69,3 +69,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+
+# We modify several neverallows, so let the build proceed
+ifneq ($(TARGET_BUILD_VARIANT),user)
+    SELINUX_IGNORE_NEVERALLOWS := true
+endif
