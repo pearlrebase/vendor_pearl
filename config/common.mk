@@ -53,14 +53,15 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
+    WallpaperPickerGooglePrebuilt \
     Stk \
     Recorder \
     Music \
     Browser \
     InterfaceCenter \
     SystemUpdates \
-	MarkupGoogle \
-	WellbeingPrebuilt
+    MarkupGoogle \
+    WellbeingPrebuilt
 
 # Extra tools
 PRODUCT_PACKAGES += \
