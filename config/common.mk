@@ -149,24 +149,27 @@ PRODUCT_PACKAGES += \
 
 # Clean cache
 PRODUCT_COPY_FILES += \
-    vendor/superior/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
-	
+    vendor/pearl/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG ?= false
 
 #Telephony
 $(call inherit-product, vendor/pearl/config/telephony.mk)
 
-# pearl_props
+# Pearl_props
 $(call inherit-product, vendor/pearl/config/pearl_props.mk)
+
+# Packages
+include vendor/pearl/config/packages.mk
+
+#Themes
+include vendor/pearl/themes/common.mk
 
 # Enable ADB authentication
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
-
-#Themes
-include vendor/pearl/themes/common.mk
 
 # Include SDCLANG definitions if it is requested and available
 #ifeq ($(HOST_OS),linux)
