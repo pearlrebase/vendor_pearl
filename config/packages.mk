@@ -17,7 +17,8 @@
 # Custom pearlOS packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    Launcher3 \
+    Lawnchair \
+    LawnConf \
     LiveWallpapers \
     LiveWallpapersPicker \
     WallpaperPickerGooglePrebuilt \
@@ -25,7 +26,6 @@ PRODUCT_PACKAGES += \
     Recorder \
     Music \
     Browser \
-    InterfaceCenter \
     SystemUpdates \
     MarkupGoogle \
     WellbeingPrebuilt \
