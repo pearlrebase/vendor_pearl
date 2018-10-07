@@ -55,3 +55,11 @@ PRODUCT_COPY_FILES += \
    vendor/pearl/prebuilt/common/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
 
 ADDITIONAL_FONTS_FILE := vendor/pearl/prebuilt/common/fonts/google-sans.xml
+
+# Turbo
+PRODUCT_PACKAGES += \
+    Turbo \
+
+PRODUCT_COPY_FILES += \
+   vendor/pearl/prebuilt/common/etc/permissions/privapp-permissions-turbo.xml:system/etc/permissions/privapp-permissions-turbo.xml \
+   vendor/pearl/prebuilt/common/etc/sysconfig/turbo.xml:system/etc/sysconfig/turbo.xml
