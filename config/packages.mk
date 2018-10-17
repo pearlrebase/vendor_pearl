@@ -135,3 +135,16 @@ PRODUCT_PACKAGES += \
     TealAccent \
     YellowAccent \
     WhiteAccent
+
+# QS tile styles
+PRODUCT_PACKAGES += \
+    QStileCircleTrim \
+    QStileDefault \
+    QStileDualToneCircle \
+    QStileSquircleTrim
+
+# Omni Poor Man Themes
+PRODUCT_PACKAGES += \
+    DocumentsUITheme \
+    DialerTheme \
+    TelecommTheme
