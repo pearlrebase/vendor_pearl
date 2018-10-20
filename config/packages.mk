@@ -46,6 +46,10 @@ PRODUCT_PACKAGES += \
 	SysuiQsBlackTheme \
     SysuiQsDarkTheme
 
+# Lawnchair Default Configuration
+PRODUCT_PACKAGES += \
+    LawnConf
+
 PRODUCT_COPY_FILES += \
    vendor/pearl/prebuilt/common/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
    vendor/pearl/prebuilt/common/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
