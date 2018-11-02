@@ -36,6 +36,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
+# priv-app permissions
+PRODUCT_COPY_FILES += \
+    vendor/pearl/prebuilt/common/etc/permissions/privapp-permissions-pearl.xml:system/etc/permissions/privapp-permissions-pearl.xml
+
 # Device Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/pearl/overlay/common \

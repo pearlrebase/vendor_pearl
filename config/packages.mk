@@ -16,6 +16,7 @@
 
 # Custom pearlOS packages
 PRODUCT_PACKAGES += \
+    LatinIME \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
