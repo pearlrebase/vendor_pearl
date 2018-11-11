@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
     QStileDottedCircle \
     QStileNinja \
     QStilePokesign \
-    QStileWavey
+    QStileWavey \
+    QStileSquaremedo
 
 
 # Omni Poor Man Themes
