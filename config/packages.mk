@@ -138,21 +138,25 @@ PRODUCT_PACKAGES += \
 
 # QS tile styles
 PRODUCT_PACKAGES += \
-    QStileCircleTrim \
     QStileDefault \
-    QStileDualToneCircle \
-    QStileSquircleTrim \
-    QStileAttemptMountain \
-    QStileCircleDual \
+    QStileCircleTrim \
+    QStileCircleDualTone \
     QStileCircleGradient \
     QStileDottedCircle \
+    QStileDualToneCircle \
+    QStileInk \
+    QStileInkdrop \
+    QStileMountain \
     QStileNinja \
-    QStilePokesign \
-    QStileWavey \
-    QStileSquaremedo \
     QStileOreo \
     QStileOreoCircleTrim \
-    QStileOreoSquircleTrim
+    QStileOreoSquircleTrim \
+    QStilePokesign \
+    QStileSquaremedo \
+    QStileSquircle \
+    QStileSquircleTrim \
+    QStileTeardrop \
+    QStileWavey
 
 
 # Omni Poor Man Themes
