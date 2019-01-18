@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
     SystemUpdates \
     MarkupGoogle \
     WellbeingPrebuilt \
-    MatchmakerPrebuilt
+    MatchmakerPrebuilt \
+    SoundPickerPrebuilt
 
 # Extra tools
 PRODUCT_PACKAGES += \
