@@ -92,7 +92,8 @@ PRODUCT_PACKAGES += \
     ContactsThemeDark \
     DialerThemeDark \
     FilesThemeDark \
-    UpdaterDark
+    UpdaterDark \
+    WellbeingDark
 
 # Themes Black
 PRODUCT_PACKAGES += \
@@ -102,7 +103,8 @@ PRODUCT_PACKAGES += \
     ContactsThemeBlack \
     DialerThemeBlack \
     FilesThemeBlack \
-    UpdaterBlack
+    UpdaterBlack \
+    WellbeingBlack
 
 # Accents
 PRODUCT_PACKAGES += \
