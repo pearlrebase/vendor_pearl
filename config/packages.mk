@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
 	SysuiQsBlackTheme \
     SysuiQsDarkTheme
 
+# Settings Icon Tint
+PRODUCT_PACKAGES += \
+    SettingsIconTint
+
 # Lawnchair Default Configuration
 PRODUCT_PACKAGES += \
     LawnConf
