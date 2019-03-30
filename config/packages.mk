@@ -49,7 +49,8 @@ PRODUCT_PACKAGES += \
 
 # Settings Icon Tint
 PRODUCT_PACKAGES += \
-    SettingsIconTint
+    SettingsIconTint \
+    SettingsIconTintDark
 
 # Lawnchair Default Configuration
 PRODUCT_PACKAGES += \

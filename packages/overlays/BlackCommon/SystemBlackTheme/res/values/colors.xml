@@ -39,6 +39,4 @@
     <color name="toast_bg_color">@*android:color/black</color>
     <color name="toast_text_color">@android:color/white</color>
 
-    <!-- Settings icon tint -->
-    <color name="settings_icon_tint_color">#c1c1c1</color>
 </resources>
