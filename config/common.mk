@@ -132,6 +132,10 @@ $(call inherit-product, vendor/pearl/config/telephony.mk)
 # Pearl_props
 $(call inherit-product, vendor/pearl/config/pearl_props.mk)
 
+# LiveDisplay
+PRODUCT_COPY_FILES += \
+    vendor/pearl/config/permissions/privapp-permissions-custom.xml:system/etc/permissions/privapp-permissions-custom.xml
+
 # Packages
 include vendor/pearl/config/packages.mk
 
