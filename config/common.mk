@@ -96,6 +96,9 @@ PRODUCT_PACKAGES += \
 # Fonts
 include vendor/pearl/config/fonts.mk
 
+#VERSION
+include vendor/pearl/config/version.mk
+
 # We modify several neverallows, so let the build proceed
 ifneq ($(TARGET_BUILD_VARIANT),user)
     SELINUX_IGNORE_NEVERALLOWS := true
