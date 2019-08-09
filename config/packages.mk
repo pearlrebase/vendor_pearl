@@ -1,16 +1,14 @@
-PRODUCT_PACKAGES += \
-    Lawnchair
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
     librsjni
 
 # DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
+#PRODUCT_PACKAGES += \
+#    org.dirtyunicorns.utils
 
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
+#PRODUCT_BOOT_JARS += \
+#    org.dirtyunicorns.utils
 
 # Accent and Base packages
 PRODUCT_PACKAGES += \
@@ -56,6 +54,7 @@ PRODUCT_PACKAGES += \
 
 # Lawnchair Default Configuration
 PRODUCT_PACKAGES += \
+    Lawnchair \
     LawnConf
 
 PRODUCT_COPY_FILES += \
@@ -75,3 +74,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
    vendor/pearl/prebuilt/common/etc/permissions/privapp-permissions-turbo.xml:system/etc/permissions/privapp-permissions-turbo.xml \
    vendor/pearl/prebuilt/common/etc/sysconfig/turbo.xml:system/etc/sysconfig/turbo.xml
+
+#PACKAGES
+PRODUCT_PACKAGES +=\
+     Calendar \
+     Dialer \
+     DeskClock \
+     Messaging \
+     Shell
