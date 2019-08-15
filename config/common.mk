@@ -33,21 +33,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Bootanimation
-TARGET_BOOTANIMATION_480P := $(shell \
-  if [ $(TARGET_SCREEN_WIDTH) -le 720 ]; then \
-    echo 'true'; \
-  else \
-    echo ''; \
-  fi )
-
-# Bootanimation
-ifeq ($(TARGET_BOOTANIMATION_480P),true)
-PRODUCT_COPY_FILES += \
-    vendor/pearl/prebuilt/common/bootanimation/bootanimation-480p.zip:system/media/bootanimation.zip
-else
 PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
-endif
 
 # Device Overlays
 DEVICE_PACKAGE_OVERLAYS += \
