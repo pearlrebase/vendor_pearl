@@ -30,6 +30,10 @@ ifeq ($(PEARL_OFFICIAL), true)
     ifeq ($(FOUND_DEVICE),$(CURRENT_DEVICE))
       IS_OFFICIAL=true
       PEARL_BUILD_TYPE := OFFICIAL
+
+PRODUCT_PACKAGES += \
+    Updater
+
     endif
     ifneq ($(IS_OFFICIAL), true)
        PEARL_BUILD_TYPE := UNOFFICIAL
