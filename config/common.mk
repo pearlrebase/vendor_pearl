@@ -104,6 +104,15 @@ PRODUCT_COPY_FILES += \
 # Recommend using the non debug dexpreopter
 USE_DEX2OAT_DEBUG ?= false
 
+# CAF
+# Telephony packages
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 #Telephony
 $(call inherit-product, vendor/pearl/config/telephony.mk)
 
