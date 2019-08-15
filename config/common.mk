@@ -19,6 +19,10 @@ PRODUCT_BRAND ?= PearlOS
 
 include vendor/pearl/config/version.mk
 
+# init file
+PRODUCT_COPY_FILES += \
+    vendor/pearl/prebuilt/common/etc/init.pearl.rc:system/etc/init/init.pearl.rc
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
