@@ -127,7 +127,10 @@ $(call inherit-product, vendor/pearl/config/pearl_props.mk)
 include vendor/pearl/config/packages.mk
 
 #Themes
-include vendor/pearl/themes/common.mk
+#include vendor/pearl/themes/common.mk
+
+# Sounds
+include vendor/pearl/config/sounds.mk
 
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 # Disable ADB authentication
