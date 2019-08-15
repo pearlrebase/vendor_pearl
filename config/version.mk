@@ -22,6 +22,7 @@ ifndef PEARL_BUILD_TYPE
 endif
 
 CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
+CUSTOM_BUILD_DATE := $(shell date -u +%Y%m%d-%H%M)
 
 ifeq ($(PEARL_OFFICIAL), true)
    LIST = $(shell curl -s https://raw.githubusercontent.com/PearlOS/android_vendor_pearl/pie/pearl.devices)
@@ -44,9 +45,9 @@ endif
 
 TARGET_PRODUCT_SHORT := $(subst pearl_,,$(CUSTOM_BUILD))
 
-PEARL_VERSION := PearlOS-$(PEARL_MOD_VERSION)-$(CURRENT_DEVICE)-$(PEARL_BUILD_TYPE)-$(shell date -u +%Y%m%d)
+PEARL_VERSION := PearlOS-$(PEARL_MOD_VERSION)-$(CURRENT_DEVICE)-$(PEARL_BUILD_TYPE)-$(CUSTOM_BUILD_DATE)
 
-PEARL_FINGERPRINT := PearlOS/$(PEARL_MOD_VERSION)/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%Y%m%d)
+PEARL_FINGERPRINT := PearlOS/$(PEARL_MOD_VERSION)/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(CUSTOM_BUILD_DATE)
 
 PRODUCT_GENERIC_PROPERTIES += \
   ro.pearl.version=$(PEARL_VERSION) \
