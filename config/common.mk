@@ -47,54 +47,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/bin/format.sh:install/bin/format.sh
 
-# Custom pearlOS packages
-PRODUCT_PACKAGES += \
-    LatinIME \
-    Launcher3 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    WallpaperPickerGooglePrebuilt \
-    Stk \
-    Recorder \
-    Music \
-    Browser \
-    InterfaceCenter \
-    SystemUpdates \
-    MarkupGoogle \
-    WellbeingPrebuilt
-
-# Extra tools
-PRODUCT_PACKAGES += \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    mount.exfat \
-    fsck.exfat \
-    mkfs.exfat \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs \
-    mkfs.ntfs \
-    fsck.ntfs \
-    mount.ntfs \
-    7z \
-    bzip2 \
-    curl \
-    lib7z \
-    powertop \
-    pigz \
-    tinymix \
-    unrar \
-    unzip \
-    zip \
-	vim \
-    rsync \
-	bash
-
-# Exchange support
-PRODUCT_PACKAGES += \
-    Exchange2
-
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
     vendor/pearl/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
@@ -106,8 +58,8 @@ PRODUCT_COPY_FILES += \
 
 # Pixel sysconfig
 PRODUCT_COPY_FILES += \
-    vendor/pearl/prebuilt/common/etc/sysconfig/pixel.xml:system/etc/sysconfig/pixel.xml	
-	
+    vendor/pearl/prebuilt/common/etc/sysconfig/pixel.xml:system/etc/sysconfig/pixel.xml
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/pearl/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
@@ -140,15 +92,6 @@ PRODUCT_COPY_FILES += \
 # Media
 PRODUCT_GENERIC_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
-
-# Needed by some RILs and for some Gapps packages
-PRODUCT_PACKAGES += \
-    librsjni \
-    libprotobuf-cpp-full
-
-# Charger images
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 # Clean cache
 PRODUCT_COPY_FILES += \
