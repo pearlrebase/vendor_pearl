@@ -17,7 +17,7 @@
 
 PRODUCT_BRAND ?= PearlOS
 
-include vendor/pearl/config/version.mk
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # init file
 PRODUCT_COPY_FILES += \
@@ -137,6 +137,9 @@ include vendor/pearl/config/packages.mk
 # Sounds
 include vendor/pearl/config/sounds.mk
 
+#Version
+include vendor/pearl/config/version.mk
+
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 # Disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
@@ -144,10 +147,3 @@ else
 # Enable ADB authentication
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
-
-# Include SDCLANG definitions if it is requested and available
-#ifeq ($(HOST_OS),linux)
-#    ifneq ($(wildcard vendor/qcom/sdclang-4.0/),)
-#        include vendor/pearl/sdclang/sdclang.mk
-#    endif
-#endif
