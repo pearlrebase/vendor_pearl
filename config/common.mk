@@ -39,7 +39,9 @@ PRODUCT_COPY_FILES += \
 # Device Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/pearl/overlay/common \
-    vendor/pearl/overlay/dictionaries
+    vendor/pearl/overlay/dictionaries \
+    vendor/pearl/overlay/themes
+
 
 # EXT4/F2FS format script
 PRODUCT_COPY_FILES += \
