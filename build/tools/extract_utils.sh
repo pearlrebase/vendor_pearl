@@ -45,7 +45,7 @@ trap cleanup EXIT INT TERM ERR
 #
 # $1: device name
 # $2: vendor name
-# $3: SUPERIOR root directory
+# $3: PEARL root directory
 # $4: is common device - optional, default to false
 # $5: cleanup - optional, default to true
 # $6: custom vendor makefile name - optional, default to false
@@ -66,15 +66,15 @@ function setup_vendor() {
         exit 1
     fi
 
-    export SUPERIOR_ROOT="$3"
-    if [ ! -d "$SUPERIOR_ROOT" ]; then
-        echo "\$SUPERIOR_ROOT must be set and valid before including this script!"
+    export PEARL_ROOT="$3"
+    if [ ! -d "$PEARL_ROOT" ]; then
+        echo "\$PEARL_ROOT must be set and valid before including this script!"
         exit 1
     fi
 
     export OUTDIR=vendor/"$VENDOR"/"$DEVICE"
-    if [ ! -d "$SUPERIOR_ROOT/$OUTDIR" ]; then
-        mkdir -p "$SUPERIOR_ROOT/$OUTDIR"
+    if [ ! -d "$PEARL_ROOT/$OUTDIR" ]; then
+        mkdir -p "$PEARL_ROOT/$OUTDIR"
     fi
 
     VNDNAME="$6"
@@ -82,9 +82,9 @@ function setup_vendor() {
         VNDNAME="$DEVICE"
     fi
 
-    export PRODUCTMK="$SUPERIOR_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
-    export ANDROIDMK="$SUPERIOR_ROOT"/"$OUTDIR"/Android.mk
-    export BOARDMK="$SUPERIOR_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
+    export PRODUCTMK="$PEARL_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
+    export ANDROIDMK="$PEARL_ROOT"/"$OUTDIR"/Android.mk
+    export BOARDMK="$PEARL_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
 
     if [ "$4" == "true" ] || [ "$4" == "1" ]; then
         COMMON=1
@@ -707,7 +707,7 @@ function get_file() {
 # Convert apk|jar .odex in the corresposing classes.dex
 #
 function oat2dex() {
-    local SUPERIOR_TARGET="$1"
+    local PEARL_TARGET="$1"
     local OEM_TARGET="$2"
     local SRC="$3"
     local TARGET=
@@ -715,8 +715,8 @@ function oat2dex() {
     local HOST="$(uname)"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$SUPERIOR_ROOT"/vendor/superior/build/tools/smali/baksmali.jar
-        export SMALIJAR="$SUPERIOR_ROOT"/vendor/superior/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$PEARL_ROOT"/vendor/pearl/build/tools/smali/baksmali.jar
+        export SMALIJAR="$PEARL_ROOT"/vendor/pearl/build/tools/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
@@ -744,11 +744,11 @@ function oat2dex() {
         FULLY_DEODEXED=1 && return 0 # system is fully deodexed, return
     fi
 
-    if [ ! -f "$SUPERIOR_TARGET" ]; then
+    if [ ! -f "$PEARL_TARGET" ]; then
         return;
     fi
 
-    if grep "classes.dex" "$SUPERIOR_TARGET" >/dev/null; then
+    if grep "classes.dex" "$PEARL_TARGET" >/dev/null; then
         return 0 # target apk|jar is already odexed, return
     fi
 
@@ -771,7 +771,7 @@ function oat2dex() {
                 java -jar "$BAKSMALIJAR" deodex -o "$TMPDIR/dexout" -b "$BOOTOAT" -d "$TMPDIR" "$TMPDIR/$(basename "$OAT")"
                 java -jar "$SMALIJAR" assemble "$TMPDIR/dexout" -o "$TMPDIR/classes.dex"
             fi
-        elif [[ "$SUPERIOR_TARGET" =~ .jar$ ]]; then
+        elif [[ "$PEARL_TARGET" =~ .jar$ ]]; then
             JAROAT="$TMPDIR/system/framework/$ARCH/boot-$(basename ${OEM_TARGET%.*}).oat"
             JARVDEX="/system/framework/boot-$(basename ${OEM_TARGET%.*}).vdex"
             if [ ! -f "$JAROAT" ]; then
@@ -936,7 +936,7 @@ function extract() {
     local PRODUCT_COPY_FILES_COUNT=${#PRODUCT_COPY_FILES_LIST[@]}
     local COUNT=${#FILELIST[@]}
 
-    local OUTPUT_ROOT="$SUPERIOR_ROOT"/"$OUTDIR"/proprietary
+    local OUTPUT_ROOT="$PEARL_ROOT"/"$OUTDIR"/proprietary
     local OUTPUT_TMP="$TMPDIR"/"$OUTDIR"/proprietary
 
     if [ "$SRC" = "adb" ]; then
@@ -1125,7 +1125,7 @@ function extract_firmware() {
     local FILELIST=( ${PRODUCT_COPY_FILES_LIST[@]} )
     local COUNT=${#FILELIST[@]}
     local SRC="$2"
-    local OUTPUT_DIR="$SUPERIOR_ROOT"/"$OUTDIR"/radio
+    local OUTPUT_DIR="$PEARL_ROOT"/"$OUTDIR"/radio
 
     if [ "$VENDOR_RADIO_STATE" -eq "0" ]; then
         echo "Cleaning firmware output directory ($OUTPUT_DIR).."
