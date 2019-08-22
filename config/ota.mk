@@ -1,17 +1,17 @@
 ifneq ($(IS_GENERIC_SYSTEM_IMAGE), true)
-ifeq ($(CUSTOM_BUILD_TYPE), OFFICIAL)
+ifeq ($(PEARL_BUILD_TYPE), OFFICIAL)
 
-CUSTOM_OTA_VERSION_CODE := pie
+PEARL_OTA_VERSION_CODE := pie
 
 CUSTOM_PROPERTIES += \
-    org.pixelexperience.ota.version_code=$(CUSTOM_OTA_VERSION_CODE) \
+    org.pearl.ota.version_code=$(PEARL_OTA_VERSION_CODE) \
     sys.ota.disable_uncrypt=1
 
 PRODUCT_PACKAGES += \
     Updates
 
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/org.pixelexperience.ota.xml:system/etc/permissions/org.pixelexperience.ota.xml
+    vendor/pearl/config/permissions/org.pearl.ota.xml:system/etc/permissions/org.pearl.ota.xml
 
 endif
 endif
